@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
+
+        <title>Result</title>
+    </head>
+    <body class="p-3 mb-2 bg-light text-black" fontsize="20">
+
+    <div class="container justify-content-center w-50 p-3" style="margin-top: 5em;">
+
+        <!--===============    Upload file Control   ==============-->
+
+        <div class="alert alert-success fill-parent" th:if="${fileUploadSuccess}">
+            <h1 class="display-5">Success</h1>
+            <br>
+            <span>Your changes were successfully saved. Click <a href="/home" id=idhomf1>here</a> to continue.</span>
+            <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+        </div>
+
+        <div class="alert alert-danger fill-parent" th:if="${fileUploadError}">
+            <h1 class="display-5">Error</h1>
+            <span th:text="${fileUploadError}"></span>
+            <br>
+            <span>Click <a href="/home" id=idhomf2>here</a> to continue.</span>
+            <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+        </div>
+
+        <!--=======    Delete file Control   ========-->
+
+        <div class="alert alert-success fill-parent" th:if="${fileId != null}">
+            <h1 class="display-5">Success</h1>
+            <span th:text="${fileId}"></span>
+            Delete successfully
+            <br>
+            <span>Click <a href="/home" id=idhomf3>here</a> to continue.</span>
+            <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+        </div>
+
+        <!--===============    Note Control   ==============-->
+
+        <div class="alert alert-success fill-parent" th:if="${userNotesObject != null}">
+            <h1 class="display-5">Success</h1>
+            Note Create successfully
+            <br>
+            <span>Click <a href="/home" id=idhomn1>here</a> to continue.</span>
+            <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+        </div>
+        <!--=======    Delete Note Control   ========-->
+        <div class="alert alert-success fill-parent" th:if="${noteId != null}">
+            <h1 class="display-5">Success</h1>
+            Note Delete successfully
+            <br>
+            <span>Click <a href="/home" id=idhomn2>here</a> to continue.</span>
+            <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+        </div>
+
+        <!--===============    credentials Control   ==============-->
+
+        <div class="alert alert-success fill-parent" th:if="${credentials != null}">
+            <h1 class="display-5">Success</h1>
+            credentials Create successfully
+            <br>
+            <span>Click <a href="/home" id=idhomc1>here</a> to continue.</span>
+            <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+        </div>
+        <!--=======    Delete credentials Control   ========-->
+        <div class="alert alert-success fill-parent" th:if="${credentialId != null}">
+            <h1 class="display-5">Success</h1>
+            credentials Delete successfully
+            <br>
+            <span>Click <a href="/home" id=idhomc2>here</a> to continue.</span>
+            <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+        </div>
+
+
+        </div>
+
+    </div>
+    </body>
+</html>
